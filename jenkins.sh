@@ -2,7 +2,7 @@ pipeline {
     agent {
     	docker{
     		image "maven:3.9.3-jdk-20"
-    		lable "docker"
+    		label "docker"
     	}
     }
     tools {

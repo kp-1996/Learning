@@ -5,10 +5,6 @@ pipeline {
     		label "docker"
     	}
     }
-    tools {
-        maven 'Maven 3.9.3'
-        jdk 'jdk8'
-    }
     stages {
         stage ('Initialize') {
             steps {

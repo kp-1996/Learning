@@ -21,7 +21,14 @@ pipeline {
             post {
                 success {
                     junit 'target/surefire-reports/**/*.xml' 
+		    mail to: 'Prasada.kp@outlook.com',
+      		    subject: "Pipeline has succeeded: ${currentBuild.fullDisplayName}",
                 }
+		failure {
+    		    mail to: 'Prasada.kp@outlook.com',
+      		    subject: "Pipeline has failed: ${currentBuild.fullDisplayName}",
+              	    body: "Error in ${env.BUILD_URL}"
+  		}
             }
         }
     }
